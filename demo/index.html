@@ -4,9 +4,13 @@
     <title>Demo</title>
 </head>
 <body>
-    <do-greet></do-greet>
+    <do-greet name="Bob"></do-greet>
     <script src="../dist/hello-angular-elements/polyfills.js"></script>
     <script src="../dist/hello-angular-elements/scripts.js"></script>
     <script src="../dist/hello-angular-elements/main.js"></script>
+    <script>
+        const el = document.querySelector('do-greet');
+        el.addEventListener('greet', e => alert(e.detail));
+    </script>
 </body>
 </html>
