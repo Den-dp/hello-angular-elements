@@ -17,10 +17,10 @@ import { createCustomElement } from '@angular/elements';
   ]
 })
 export class AppModule implements DoBootstrap {
-  constructor(injector: Injector) {
-    const el = createCustomElement(GreeterComponent, { injector });
+  constructor(private injector: Injector) {}
+
+  ngDoBootstrap() {
+    const el = createCustomElement(GreeterComponent, { injector: this.injector });
     customElements.define('do-greet', el);
   }
-
-  ngDoBootstrap() {}
 }
